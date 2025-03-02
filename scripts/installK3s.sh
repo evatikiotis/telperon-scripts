@@ -21,7 +21,7 @@ sed -i '3s/^/export appId=/' vars.sh
 sed -i '4s/^/export password=/' vars.sh
 sed -i '5s/^/export tenantId=/' vars.sh
 sed -i '6s/^/export vmName=/' vars.sh
-sed -i '8s/^/export templateBaseUrl=/' vars.sh
+sed -i '7s/^/export templateBaseUrl=/' vars.sh
 
 chmod +x vars.sh
 . ./vars.sh
@@ -29,7 +29,7 @@ chmod +x vars.sh
 export K3S_VERSION="1.28.5+k3s1" # Do not change!
 
 # Creating login message of the day (motd)
-sudo curl -v -o /etc/profile.d/welcomeK3s.sh ${templateBaseUrl}scripts/welcomeK3s.sh
+sudo curl -v -o /etc/profile.d/welcomeK3s.sh ${templateBaseUrl}/scripts/welcomeK3s.sh
 
 # Syncing this script log to 'jumpstart_logs' directory for ease of troubleshooting
 sudo -u $adminUsername mkdir -p /home/${adminUsername}/jumpstart_logs
