@@ -10,8 +10,8 @@ sudo echo "staginguser:ArcPassw0rd" | sudo chpasswd
 
 # Injecting environment variables
 # Check if the correct number of arguments are passed
-if [ "$#" -ne 7 ]; then
-    echo "Usage: $0 <adminUsername> <appId> <password> <tenantId> <vmName> <location> <templateBaseUrl>"
+if [ "$#" -ne 3 ]; then
+    echo "Usage: $0 <adminUsername> <password> <templateBaseUrl>"
     exit 1
 fi
 
@@ -19,12 +19,8 @@ fi
 cat <<EOF > vars.sh
 #!/bin/bash
 export adminUsername=$1
-export appId=$2
-export password=$3
-export tenantId=$4
-export vmName=$5
-export location=$6
-export templateBaseUrl=$7
+export password=$2
+export templateBaseUrl=$3
 EOF
 
 chmod +x vars.sh
