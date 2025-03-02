@@ -10,8 +10,8 @@ spec:
     - host: argocd.telperon.com
       http:
         paths:
-          - pathType: Prefix
-            path: /
+          - path: /
+            pathType: Prefix
             backend:
               service:
                 name: argocd-server
