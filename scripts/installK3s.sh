@@ -53,4 +53,6 @@ sudo chown -R staginguser /home/${adminUsername}/.kube/config.staging
 echo ""
 sudo snap install helm --classic
 echo "path to health-probe.yaml: ${templateBaseUrl}/manifests/health-probe.yaml"
+kubectl create namespace health
+
 kubectl apply -f ${templateBaseUrl}/manifests/health-probe.yaml
