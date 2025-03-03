@@ -6,7 +6,7 @@ metadata:
 spec:
   rules:
     - host: argocd.telperon.com
-      https:
+      http:
         paths:
           - path: /
             pathType: Prefix
