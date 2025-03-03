@@ -52,7 +52,5 @@ sudo chown -R staginguser /home/${adminUsername}/.kube/config.staging
 # Installing Helm 3
 echo ""
 sudo snap install helm --classic
-kubectl create namespace argocd
-kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/install.yaml
 echo "path to health-probe.yaml: ${templateBaseUrl}/manifests/health-probe.yaml"
 kubectl apply -f ${templateBaseUrl}/manifests/health-probe.yaml
