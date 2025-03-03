@@ -1,14 +1,12 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: c8-ingress
+  name: argocd-server-ui
   namespace: argocd
-  annotations:
-    nginx.ingress.kubernetes.io/rewrite-target: /
 spec:
   rules:
     - host: argocd.telperon.com
-      http:
+      https:
         paths:
           - path: /
             pathType: Prefix
@@ -16,4 +14,4 @@ spec:
               service:
                 name: argocd-server
                 port:
-                  number: 80
+                  number: 443
